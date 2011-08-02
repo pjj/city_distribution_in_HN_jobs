@@ -105,10 +105,3 @@ if __name__ == "__main__":
         sys.exit(0)
         
     print_stats(sys.argv[1])
-    
-
-# python ./city_distribution_in_HN_jobs.py http://news.ycombinator.com/item?id=2719028
-# 60 jobs in Silicon Valley
-# 21 jobs in New York
-# 15 jobs in Cambridge MA
-# 3 jobs in Chicago
