@@ -7,16 +7,18 @@ The examples below show the 2 use cases in action.
 (Notice the systematic increase in the number of jobs in Cambridge MA.)
 
 bash-3.2$ ./city_distribution_in_HN_jobs.py http://news.ycombinator.com/item?id=2831646
-50 jobs in Silicon Valley
+52 jobs in Silicon Valley
 23 jobs in New York
+17 jobs in London
 16 jobs in Cambridge MA
 5 jobs in Chicago
 
 bash-3.2$ ./city_distribution_in_HN_jobs.py 
 ##############################
 August 2011
-50 jobs in Silicon Valley
+52 jobs in Silicon Valley
 23 jobs in New York
+17 jobs in London
 16 jobs in Cambridge MA
 5 jobs in Chicago
 ##############################
@@ -24,11 +26,13 @@ July 2011
 75 jobs in Silicon Valley
 27 jobs in New York
 17 jobs in Cambridge MA
+8 jobs in London
 5 jobs in Chicago
 ##############################
 June 2011
 58 jobs in Silicon Valley
 32 jobs in New York
+15 jobs in London
 13 jobs in Cambridge MA
 5 jobs in Chicago
 ##############################
@@ -36,14 +40,15 @@ May 2011
 67 jobs in Silicon Valley
 14 jobs in New York
 11 jobs in Cambridge MA
+11 jobs in London
 5 jobs in Chicago
 ##############################
 April 2011
 58 jobs in Silicon Valley
 20 jobs in New York
+11 jobs in London
 6 jobs in Cambridge MA
 6 jobs in Chicago
-
 
 Questions: pama @ hacker news
 """
@@ -61,12 +66,16 @@ cities = {
     "New York": r"New York|NYC",
     "Silicon Valley": r"San Francisco|Mountain View|Palo Alto",
     "Cambridge MA": r"Cambridge, MA|Cambridge MA|Boston",
-    "Chicago": r"Chicago"
+    "Chicago": r"Chicago",
+    # added London, as per transient request of prolepunk in http://news.ycombinator.com/item?id=2837153    
+    "London": r"London" 
 }
 
 
 def city_stats_in_thread(url, cities=cities):
-    soup = BeautifulSoup(urllib2.urlopen(url).read())
+    "Return a dict of city: tally counting how many top-level threads mention a city"
+    # Wait for up to 2 minutes before giving up with urlopen
+    soup = BeautifulSoup(urllib2.urlopen(url, timeout=120).read())
     stats = collections.defaultdict(int)
 
     for comment in soup.findAll("span", "comment"):
