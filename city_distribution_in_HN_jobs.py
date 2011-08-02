@@ -2,7 +2,7 @@
 
 
 """
-This hack prints the number of jobs at various cities from HN who-is-hiring pages.
+This hack prints the number of jobs at select cities from HN who-is-hiring pages.
 The examples below show the 2 use cases in action.
 (Notice the systematic increase in the number of jobs in Cambridge MA.)
 
