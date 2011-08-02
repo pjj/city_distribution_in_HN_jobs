@@ -41,5 +41,5 @@ April 2011
 6 jobs in Chicago
 
 
-The code requires the HTML parser BeautifulSoup, available here:
+This python code depends on the HTML parser BeautifulSoup, available here:
 http://www.crummy.com/software/BeautifulSoup/#Download
