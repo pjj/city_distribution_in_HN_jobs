@@ -39,3 +39,7 @@ April 2011
 20 jobs in New York
 6 jobs in Cambridge MA
 6 jobs in Chicago
+
+
+The code requires the HTML parser BeautifulSoup, available here:
+http://www.crummy.com/software/BeautifulSoup/#Download
