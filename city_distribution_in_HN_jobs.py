@@ -6,13 +6,11 @@ This hack prints the number of jobs at various cities from HN who-is-hiring page
 The examples below show the 2 use cases in action.
 (Notice the systematic increase in the number of jobs in Cambridge MA.)
 
-bash-3.2$ python ./city_distribution_in_HN_jobs.py http://news.ycombinator.com/item?id=2719028
-
-75 jobs in Silicon Valley
-27 jobs in New York
-17 jobs in Cambridge MA
+bash-3.2$ ./city_distribution_in_HN_jobs.py http://news.ycombinator.com/item?id=2831646
+50 jobs in Silicon Valley
+23 jobs in New York
+16 jobs in Cambridge MA
 5 jobs in Chicago
-
 
 bash-3.2$ ./city_distribution_in_HN_jobs.py 
 ##############################
