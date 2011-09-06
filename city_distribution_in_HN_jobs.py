@@ -93,6 +93,7 @@ def print_stats(url):
 
 def history():
     data = [
+        ("September 2011", "http://news.ycombinator.com/item?id=2949787"),
         ("August 2011", "http://news.ycombinator.com/item?id=2831646"),
         ("July 2011", "http://news.ycombinator.com/item?id=2719028"),
         ("June 2011", "http://news.ycombinator.com/item?id=2607052"),
